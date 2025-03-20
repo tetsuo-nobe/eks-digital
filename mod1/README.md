@@ -129,11 +129,11 @@ kubectl get pod
 ```
 
 ```
-kubectl get pod –n namespace1
+kubectl get pod -n namespace1
 ```
 
 ```
-kubectl get pod –n namespace2
+kubectl get pod -n namespace2
 ```
 
 ```
