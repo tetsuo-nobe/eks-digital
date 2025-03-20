@@ -39,7 +39,7 @@
    ```
 
    ```
-   kubectl exec -it my-httpd-pod -- /bin/bash
+   kubectl exec -it my-nginx-pod -- /bin/bash
    ```
 
    ```
