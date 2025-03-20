@@ -357,79 +357,79 @@ kubectl delete -f  n2.yaml
 
 1. Deployment を作成します。 
    ```
-   k apply -f deployment.yaml
+   kubectl apply -f deployment.yaml
    ```
 
 1. Deployment のステータスを確認します。
    ```
-   k get deployments
+   kubectl get deployments
    ```
 
 1. ReplicaSet のステータスを確認します。
    ```
-   k get replicasets
+   kubectl get replicasets
    ```
 
 1. Pod のステータスを確認します。
    ```
-   k get pods
+   kubectl get pods
    ```
 
 1. Deployment のレプリカ数を 3 に変更します。
    - (ここでは kubectl scale コマンドを使用していますが、vim を使用できる人はマニフェストで replicas の値を変更して kubectl apply を使用しても OKです。)
    ```
-   k scale deployment my-deployment --replicas=3
+   kubectl scale deployment my-deployment --replicas=3
    ```
 
 1. Deployment のステータスを確認します。
    ```
-   k get deployments
+   kubectl get deployments
    ```
 
 1. ReplicaSet のステータスを確認します。
    ```
-   k get replicasets
+   kubectl get replicasets
    ```
 
 1. Pod のステータスを確認します。
    ```
-   k get pods
+   kubectl get pods
    ```
 
 1. Deployment のレプリカ数を2に変更します。 
    - (ここでは kubectl scale コマンドを使用していますが、vim を使用できる人はマニフェストで replicas の値を変更して kubectl apply を使用しても OKです。)
    ```
-   k scale deployment my-deployment --replicas=2
+   kubectl scale deployment my-deployment --replicas=2
    ```
 
 1. Deployment のステータスを確認します。
    ```
-   k get deployments
+   kubectl get deployments
    ```
 
 1. ReplicaSet のステータスを確認します。
    ```
-   k get replicasets
+   kubectl get replicasets
    ```
 
 1. Pod のステータスを確認します。
    ```
-   k get pods
+   kubectl get pods
    ```
 
 1. Deployment を削除します。
    ```
-   k delete -f deployment.yaml
+   kubectl delete -f deployment.yaml
    ```
 
 1. Deployment のステータスを確認します。
    ```
-   k get deployments
+   kubectl get deployments
    ```
 
 1. Pod のステータスを確認します。
    ```
-   k get pods
+   kubectl get pods
    ```  
 
 ---
