@@ -7,8 +7,87 @@
 
 1. ワーク用リポジトリをクローンして移動します。
    ```
-   git clone https://github.com/tetsuo-nobe/running_containers_on_amazon_eks.git
-   cd running_containers_on_amazon_eks/mod1
+   git clone https://github.com/tetsuo-nobe/eks-digital.git
+   cd eks-digital/mod1
+   ```
+---
+
+## Kubectl のバージョンや接続先の
+
+   ```
+   kubectl version 
+   ```
+   
+   ```
+   kubectl cluster-info
+   ```
+
+   ```
+   kubectl get nodes
+   ```
+
+   ```   
+   kubectl  apply –f  pod-nginx.yaml
+   ```
+
+   ```
+   kubectl  get pod
+   ```
+
+   ```
+   kubectl describe pod xxx
+   ```
+
+   ```
+   kubectl exec -it my-httpd-pod -- /bin/bash
+   ```
+
+   ```
+   ls
+   ```
+
+   ```
+   curl localhost
+   ```
+
+   ```
+   exit
+   ```
+
+   ```
+   kubectl apply –f service.yaml
+   ```
+
+   ```
+   kubectl  get service
+   ```
+
+   ```
+   kubectl api-resources
+   ```
+
+   ```
+   kubectl get po
+   ```
+
+   ```
+   kubectl get svc
+   ```
+
+   ```
+   kubectl delete –f pod-nginx.yaml
+   ```
+
+   ```
+   kubectl apply –f service.yaml
+   ```
+
+   ```
+   kubectl get po
+   ```
+
+   ```
+   kubectl get svc   
    ```
 
 ---
