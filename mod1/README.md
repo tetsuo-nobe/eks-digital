@@ -92,6 +92,57 @@
 
 ---
 
+## Namespace のデモ
+
+
+★Namespace1 と　Namespace 2 を作成
+```
+kubectl create ns Namespace1
+```
+
+```
+kubectl create ns Namespace2
+```
+
+```
+kubectl get ns
+```
+
+★Namespace1 に p1 Pod 作成
+
+```
+cat  n1-p1.yaml
+```
+
+```
+kubectl apply -f  n1-p1.yaml
+```
+
+★Namespace2 に　p1 Pod 作成
+
+```
+cat  n2-p1.yaml
+```
+
+```
+kubectl apply -f  n2-p1.yaml
+```
+
+```
+kubectl get pod 
+```
+
+```
+kubectl get pod –n namespace1
+```
+
+```
+kubectl get pod –n namespace2
+```
+
+
+---
+
 ## Pod の操作
 
 1. Pod のマニフェストを確認します。
