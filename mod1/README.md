@@ -35,7 +35,7 @@
    ```
 
    ```
-   kubectl describe pod xxx
+   kubectl describe pod my-nginx-pod
    ```
 
    ```
