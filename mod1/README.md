@@ -79,7 +79,7 @@
    ```
 
    ```
-   kubectl apply -f service.yaml
+   kubectl delete -f service.yaml
    ```
 
    ```
