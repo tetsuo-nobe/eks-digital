@@ -12,7 +12,7 @@
    ```
 ---
 
-## Kubectl のバージョンや接続先の
+## Kubectl のデモ
 
    ```
    kubectl version 
