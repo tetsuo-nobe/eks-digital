@@ -27,7 +27,7 @@
    ```
 
    ```   
-   kubectl  apply –f  pod-nginx.yaml
+   kubectl  apply -f  pod-nginx.yaml
    ```
 
    ```
@@ -55,7 +55,7 @@
    ```
 
    ```
-   kubectl apply –f service.yaml
+   kubectl apply -f service.yaml
    ```
 
    ```
@@ -75,11 +75,11 @@
    ```
 
    ```
-   kubectl delete –f pod-nginx.yaml
+   kubectl delete -f pod-nginx.yaml
    ```
 
    ```
-   kubectl apply –f service.yaml
+   kubectl apply -f service.yaml
    ```
 
    ```
