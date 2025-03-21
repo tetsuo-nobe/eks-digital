@@ -174,3 +174,84 @@ eksctl create cluster -f  clusterconfig-public.yaml
 ```
 
 ---
+
+### Mod3 demo 用: .kube/config　ファイルをみせる
+
+```
+cd
+```
+
+```
+ls   -la
+```
+
+(.kubeがみえる）
+
+```
+cd .kube
+```
+
+```
+ls
+```
+
+(configファイルがみえる）
+
+```
+cat config
+```
+
+このconfigファイルには、接続先のクラスターの情報や証明書などの情報が格納されています。
+これらの情報は、kubectl で クラスターに接続するために必要になりますが、eksctl でEKSクラスターを作成したクライアントでは、このファイルは自動で作成されますので、EKSクラスター作成後、すぐにそのクライアントでクラスターを操作できます。
+
+
+---
+
+### Mod3 demo 用: eksctl を使用したクラスターの作成
+
+
+準備:既存の config のバックアップ取得
+
+```
+eksctl create cluster -f  my-cluster.yaml
+```
+
+```
+kubectl get nodes
+```
+
+```
+kubectl get pods
+```
+
+```
+kubectl get pods -A
+```
+
+```
+cd
+```
+
+```
+ls   -la
+```
+
+(.kubeがみえる）
+
+```
+cd .kube
+```
+
+```
+ls
+```
+
+(configファイルがみえる）
+
+後始末
+
+```
+eksctl delete cluster -f  my-cluster.yaml
+```
+
+バックアップの config ファイルを戻す
