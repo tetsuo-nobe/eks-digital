@@ -317,22 +317,23 @@ eksctl delete fargateprofile \
 
 ### Mod3 demo 用: マネコンで EKS の Kubernetes バージョンと eks プラットフォームバージョンをみせる
 
-★マネコンで、example-cluster の「クラスター情報」でKubernetes のバージョンみせる
-★「概要」タブの「詳細」の 右側にある 「プラットフォームバージョン」をみせる eks.24とか
-★この eks.24 というバージョンから、対応するKubernetesの詳細なバージョンがわかる
-★ドキュメント：https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html#platform-versions-1-31
-★このように、Kubernetes のバージョンと、Amazon EKS のプラットフォームバージョンの対応について、留意しておきましょう
+* ★マネコンで、example-cluster の「クラスター情報」でKubernetes のバージョンみせる
+* ★「概要」タブの「詳細」の 右側にある 「プラットフォームバージョン」をみせる eks.24とか
+* ★この eks.24 というバージョンから、対応するKubernetesの詳細なバージョンがわかる
+* ★ドキュメント：
+    - https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html#platform-versions-1-31
+* ★このように、Kubernetes のバージョンと、Amazon EKS のプラットフォームバージョンの対応について、留意しておきましょう
 
 ---
 
 ### Mod3 demo 用: マネコンで EKS の クラスターのアップグレードとノードグループのアップグレードをみせる
 
--クラスターのアップグレード
-  - ★マネコンで クラスター一覧をみせる
-  - ★demo-cluster の [今すぐアップグレード]をクリック
-  - ★Kubernetes のバージョンのリストをみせる。1.31しか選べないことを説明
+* クラスターのアップグレード
+    - ★マネコンで クラスター一覧をみせる
+    - ★demo-cluster の [今すぐアップグレード]をクリック
+    - ★Kubernetes のバージョンのリストをみせる。1.31しか選べないことを説明
 
-- ノードグループのアップグレード
+* ノードグループのアップグレード
   - ★マネコンで demo-clutster を開く
   - ★[コンピューティング]タブをクリック
   - ★[ノードグループ]のセクションで、[今すぐ更新]をクリック
