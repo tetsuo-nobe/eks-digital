@@ -1,14 +1,16 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: blue-pod
+  name: gold-pod
   namespace: prod
   labels:
     app:   webserver
-    stack: blue
+    stack: gold
 spec:
   containers:
   - name:  nginx-container
     image: nginx
     ports:
       - containerPort: 80
+  nodeSelector:
+    stack: gold

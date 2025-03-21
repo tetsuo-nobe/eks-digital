@@ -250,10 +250,94 @@ ls
 
 (configファイルがみえる）
 
-後始末
+後始末：my-clusterは削除する
 
 ```
 eksctl delete cluster -f  my-cluster.yaml
 ```
 
 バックアップの config ファイルを戻す
+
+---
+
+### Mod3 demo 用: Fargate プロファイルの作成と Fargate を使用する Pod の作成
+
+
+準備:
+```
+kubectl create ns prod
+```
+
+
+```
+eksctl create fargateprofile \
+    --cluster example-cluster \
+    --name my-fargate-profile \
+    --namespace prod \
+    --labels stack=blue
+```
+
+blue-pod.yaml をみせる
+
+```
+kubectl apply -f blue-pod.yaml
+```
+
+red-pod.yaml をみせる
+
+```
+kubectl apply -f red-pod.yaml
+```
+
+マネージメントコンソールで、example-clusterのコンピューティングタブで Fargate プロファイルをみせる
+
+リソースタブで blue-pod をクリック
+
+リソースタブで red-pod をクリック
+
+
+後始末:
+
+```
+kubectl delete -f blue-pod.yaml
+```
+
+```
+kubectl delete -f red-pod.yaml
+```
+
+
+```
+eksctl delete fargateprofile \
+    --cluster example-cluster \
+    --name my-fargate-profile 
+```
+
+---
+
+### Mod3 demo 用: マネコンで EKS の Kubernetes バージョンと eks プラットフォームバージョンをみせる
+
+★マネコンで、example-cluster の「クラスター情報」でKubernetes のバージョンみせる
+★「概要」タブの「詳細」の 右側にある 「プラットフォームバージョン」をみせる eks.24とか
+★この eks.24 というバージョンから、対応するKubernetesの詳細なバージョンがわかる
+★ドキュメント：https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html#platform-versions-1-31
+★このように、Kubernetes のバージョンと、Amazon EKS のプラットフォームバージョンの対応について、留意しておきましょう
+
+---
+
+### Mod3 demo 用: マネコンで EKS の クラスターのアップグレードとノードグループのアップグレードをみせる
+
+クラスターのアップグレード
+★マネコンで クラスター一覧をみせる
+★demo-cluster の [今すぐアップグレード]をクリック
+★Kubernetes のバージョンのリストをみせる。1.31しか選べないことを説明
+
+ノードグループのアップグレード
+★マネコンで demo-clutster を開く
+★[コンピューティング]タブをクリック
+★[ノードグループ]のセクションで、[今すぐ更新]をクリック
+★[更新戦略]のリストを開く
+★[ローリング更新]は、Pod のディスラプションバジェットという最低限維持すべきPod数の設定を考慮しながら更新する。
+★この場合、ディスラプションバジェットの設定を維持できない場合は更新ができない可能性があるが、アプリケーションの可用性は維持できる
+★[強制更新]は、Pod のディスラプションバジェットの設定は考慮せずに更新する。この場合は更新は強制的に行われるが、アプリケーションの実行に影響が出る可能性がある
+
