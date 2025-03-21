@@ -7,20 +7,20 @@ metadata:
 managedNodeGroups:
   - name: my-nodes
     instanceType: t3.small
-    desiredCapacity: 3
-    privateNetworking: false
+    desiredCapacity: 2
+    privateNetworking: true
 vpc:
   subnets:
     public:
       ap-northeast-1a:
-        id: "subnet-0bf67a909df040067"
+        id: "subnet-0b10715b2edf27dde"
       ap-northeast-1c:
-        id: "subnet-02e5f4bc8c5ef2242"
+        id: "subnet-023105dfe3f0a2bdb"
     private:
       ap-northeast-1a:
-        id: "subnet-0a47133442bf445ab"
+        id: "subnet-05b9ed847f67bd0e1"
       ap-northeast-1c:
-        id: "subnet-0b0ccfcf02b15011e"
+        id: "subnet-0318a86c9486e9ea9"
   clusterEndpoints:
     publicAccess:  true
     privateAccess: false

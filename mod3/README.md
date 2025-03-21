@@ -212,6 +212,8 @@ cat config
 
 準備:既存の config のバックアップ取得
 
+ターミナルで mod3 のフォルダに移動しておく
+
 ```
 eksctl create cluster -f  my-cluster.yaml
 ```
