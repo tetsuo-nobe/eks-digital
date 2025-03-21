@@ -37,7 +37,7 @@ eksctl create cluster \
 --nodes-min 1 \
 --nodes-max 4 \
 --managed \
---version 1.25 \
+--version 1.31 \
 --region ap-northeast-1
 ```
 
@@ -54,7 +54,7 @@ eksctl create cluster \
 AWS_REGION=ap-northeast-1
 eksctl create cluster \
   --name=sample2-cluster \
-  --version 1.25 \
+  --version 1.31 \
   --nodes=3 --managed \
   --region ${AWS_REGION} --zones ${AWS_REGION}a,${AWS_REGION}c
 ```
@@ -79,7 +79,7 @@ eksctl create cluster \
 --nodes-min 1 \
 --nodes-max 4 \
 --managed \
---version 1.25 \
+--version 1.31 \
 --region ap-northeast-1
 ```
 ---
@@ -105,12 +105,28 @@ eksctl create cluster \
 --nodes-max 4 \
 --node-ami-family=Bottlerocket \
 --managed \
---version 1.25 \
+--version 1.31 \
 --region ap-northeast-1
 ```
+
 ---
 
 ### eksctlによるクラスター作成のサンプル 5
+
+* Auto Mode を使用するクラスターの作成
+* VPCやサブネットも作成
+
+```
+eksctl create cluster \
+--name=sample5-cluster \
+--enable-auto-mode     \
+--version 1.31         \
+--region ap-northeast-1
+```
+
+---
+
+### eksctlによるクラスター作成のサンプル 6
 
 * Fargateプロファイルを使用するクラスターの作成
 * VPCやサブネットも作成
@@ -119,8 +135,8 @@ eksctl create cluster \
 
 ```
 eksctl create cluster \
---name sample5-cluster \
---version 1.25 \
+--name sample6-cluster \
+--version 1.31 \
 --region ap-northeast-1 \
 --fargate
 ```
@@ -142,15 +158,15 @@ eksctl create fargateprofile \
 
 ---
 
-### eksctlによるクラスター作成のサンプル 6
+### eksctlによるクラスター作成のサンプル (構成ファイルを使用)
 
 * 構成ファイルを使用したクラスター作成
   - 下記のように `--dry-run` オプションを使用して構成ファイルのテンプレートを生成可能
     - `eksctl create cluster --name temp-cluster  --dry-run`
   - 構成ファイルの例
-    - clusterconfig_public.yaml
+    - clusterconfig-public.yaml
       - マネージドノードグループをPublicサブネットに配置
-    - clusterconfig_private.yaml
+    - clusterconfig-private.yaml
       - マネージドノードグループをPrivateサブネットに配置
 
 ```
