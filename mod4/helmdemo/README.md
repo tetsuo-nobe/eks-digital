@@ -35,6 +35,9 @@
   ```
   helm status hello-app
   ```
+
+　REVISION 1 のSTATUS が deployed になっている
+
 * Pod,Deployment,Serviceの確認
   ```
   kubectl get svc,po,deploy
@@ -42,6 +45,7 @@
 * service/my-service の EXTERNAL-IP に http:// をつけ、ブラウザでアクセス。
   - アプリケーションのバージョン 1 にアクセスできることを確認
   - (表示されるまで、しばらく時間がかかる場合があります。)
+  - 背景色が青のページが表示される。このページはバージョン1のアプリにより表示されている。
 
 * helmdemo/values.yaml の内容を変更してバージョン 2 のコンテナイメージを指定する
 
@@ -53,12 +57,19 @@
   ```
   helm status hello-app
   ```
+
+  REVISION 2 のSTATUS が deployed になっている
+
 * Pod,Deployment,Serviceの確認
   ```
   kubectl get svc,po,deploy
   ```
+  
+ 2つのPodが新たに起動され、以前の Pod がターミネイトされていることがわかる。
+
 * service/my-service の EXTERNAL-IP に http:// をつけ、ブラウザでアクセス。
   - アプリケーションのバージョン2 にアクセスできることを確認
+  - 背景色が緑のページが表示される。このページはバージョン2のアプリにより表示されている。
 * アプリケーションのデプロイ履歴を表示
   ```
   helm history hello-app
@@ -67,6 +78,8 @@
   ```
   helm rollback hello-app 1
   ```
+  （しばらく待つ）
+  
 * アプリケーションがバージョン1 に戻っていることを確認
 * アプリケーションをアンデプロイ
   ```
@@ -77,7 +90,7 @@
 
 # Artifact HUB のリポジトリからインストールしてみよう
 
-* bitnami のリポジトリを追加
+* bitnami （ビットナミー）のリポジトリを追加
   ```
   helm repo add bitnami https://charts.bitnami.com/bitnami
   ```
@@ -127,7 +140,15 @@
   helm ls
   ```
 
+後始末:
 
+pull した Chart の tgzファイルや展開したフォルダを削除
+
+リポジトリの削除
+
+```
+helm repo remove  bitnami 
+```
   
 
 
