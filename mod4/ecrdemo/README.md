@@ -7,8 +7,15 @@
 
 * レジストリに対して Docker クライアントを認証
   - 次の例では AWS アカウント ID が 000000000000 で 東京リージョンのレジストリに対して認証
+
   ```
-  aws ecr get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin 000000000000.dkr.ecr.ap-northeast-1.amazonaws.com
+  ACCOUNTID=000000000000
+
+  REGION=ap-northeast-1
+  ```
+
+  ```
+  aws ecr get-login-password --region ${REGION} | docker login --username AWS --password-stdin ${ACCOUNTID}.dkr.ecr.${REGION}.amazonaws.com
   ```
 * Docker イメージ をビルド
   - 次の例では hellodemo をタグとして指定してビルド
@@ -18,15 +25,24 @@
   ```
 * ビルド完了後、リポジトリにイメージをプッシュできるように、イメージにタグを付け
   ```
-  docker tag hellodemo:latest 000000000000.dkr.ecr.ap-northeast-1.amazonaws.com/hellodemo:latest
+  docker tag hellodemo:latest ${ACCOUNTID}.dkr.ecr.${REGION}.amazonaws.com/hellodemo:latest
 
   ```
 * リポジトリにこのイメージをプッシュ
   ```
-  docker push 000000000000.dkr.ecr.ap-northeast-1.amazonaws.com/hellodemo:latest
+  docker push ${ACCOUNTID}.dkr.ecr.${REGION}.amazonaws.com/hellodemo:latest
 
   ``` 
   
 * Kubernetes の Deployment のマニフェストにプッシュしたイメージの URI を指定して利用する。（以下のファイルを参照）
   - deployment-hellodemo.yaml 
   - service-hellodemo.yaml
+
+### Mod4 の Amazon ECR デモ用:
+
+マネコンで ECRリポジトリ hellodemo 作成
+
+作成後、リポジトリ名のリンクをクリックし、さらに [プッシュコマンドを表示] をクリック。
+そこで表示されるコマンドを使って、VS Code からリポジトリへログイン、 Dockerイメージをビルドし、ECRへpush
+
+
