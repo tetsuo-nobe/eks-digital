@@ -1,4 +1,4 @@
-# Helm でアプリケーションをデプロイしてみよう
+### Mod4 デモ: Helm でアプリケーションをデプロイしてみよう
 
 * HOME ディレクトリに移動
   ```
@@ -7,26 +7,22 @@
   
 * ワーク用リポジトリを取得して移動
   ```
-  git clone https://github.com/tetsuo-nobe/running_containers_on_amazon_eks
-  cd running_containers_on_amazon_eks/mod4
+  cd eks-digital/mod4
 
   ```
 * Chart.yaml の確認
   - helmdemo フォルダ(このフォルダ)にある Chart.yamlを参照
-  ```
-  cat helmdemo/Chart.yaml
-  ```
+
+
 * Deployment の定義ファイルの確認
   - helmdemo フォルダ(このフォルダ)にある templates/deployment/hello-deployment.yamlを参照
-  ```
-  cat helmdemo/templates/deployment/hello-deployment.yaml
-  ```
+
+
 * values.yaml の確認
   - helmdemo フォルダ(このフォルダ)にあるvalues.yamlを参照
   - レプリカ 2、コンテナイメージに tnobe/node-web-hello、コンテナイメージのバージョンに 1を指定していることがわかる。
-  ```
-  cat helmdemo/values.yaml
-  ```
+
+
 * `hello-app` アプリケーションとしてデプロイする前にdry-run実行
   ```
   helm install --debug --dry-run hello-app helmdemo/
@@ -59,9 +55,7 @@
   
   - vim を使える方は helmdemo/values.yaml を開き、`version:` の値を `'2'` に変更して保存してもかまいません
   - コンテナイメージのバージョンに 2 を指定していることを確認します。
-  ```
-  cat helmdemo/values.yaml
-  ```
+
 
 * アプリケーションをバージョン2 にアップグレードする
   ```

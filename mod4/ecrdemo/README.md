@@ -38,7 +38,11 @@
   - deployment-hellodemo.yaml 
   - service-hellodemo.yaml
 
+---
+
 ### Mod4 の Amazon ECR デモ用:
+
+準備:  eks-digital/mod4/ecrdemo ディレクトリへ移動 
 
 左側の Features & Settings の下の Scanning　をクリック
 [スキャン設定]で[基本スキャン]と[拡張スキャン]を選択できることをみせる
@@ -49,4 +53,5 @@
 
 そこで表示されるコマンドを使って、VS Code からリポジトリへログイン、 Dockerイメージをビルドし、ECRへpush
 
+マネコンで、latestがpushされたことをみせる
 
