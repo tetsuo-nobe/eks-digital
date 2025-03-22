@@ -88,9 +88,9 @@
 
 ---
 
-# Artifact HUB のリポジトリからインストールしてみよう
+# bitnami （ビットナミー） のリポジトリからインストールしてみよう
 
-* bitnami （ビットナミー）のリポジトリを追加
+* bitnami のリポジトリを追加
   ```
   helm repo add bitnami https://charts.bitnami.com/bitnami
   ```
